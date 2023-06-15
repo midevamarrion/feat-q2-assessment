@@ -15,7 +15,6 @@ class Story {
   }
 }
 
-
 class StoryTeller {
   constructor(name) {
     this.name = name;
