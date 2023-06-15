@@ -155,3 +155,51 @@ average2=student2.calculate_average()
 
 print(average1)
 print(average2)
+
+
+
+class Student:
+    def __init__(self, name, age, grades):
+        self.name = name
+        self.age = age
+        self.grades = grades
+
+    def calculate_average_grade(self):
+        if not self.grades:
+            return 0
+        return sum(self.grades) / len(self.grades)
+
+    def display_information(self):
+        print("Student Information:")
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+        print(f"Grades: {self.grades}")
+
+    def has_passed(self):
+        average_grade = self.calculate_average_grade()
+        return average_grade >= 60
+
+
+student1 = Student("John", 18, [75, 80, 90, 65, 70])
+student2 = Student("Jane", 17, [80, 85, 95, 55, 60])
+student3 = Student("Mark", 19, [70, 75, 80, 85, 90])
+
+
+student1.display_information()
+average_grade1 = student1.calculate_average_grade()
+print(f"Average Grade: {average_grade1}")
+print(f" {'Passed' if student1.has_passed() else 'Failed'}")
+
+print()
+
+student2.display_information()
+average_grade2 = student2.calculate_average_grade()
+print(f"Average Grade: {average_grade2}")
+print(f" {'Passed' if student2.has_passed() else 'Failed'}")
+
+print()
+
+student3.display_information()
+average_grade3 = student3.calculate_average_grade()
+print(f"Average Grade: {average_grade3}")
+print(f" {'Passed' if student3.has_passed() else 'Failed'}")

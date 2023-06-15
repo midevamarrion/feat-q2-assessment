@@ -166,16 +166,37 @@ class Product {
 //     60). Create objects for the Student class and demonstrate the usage of these
 //     methods.
 
-class Student{
-    constructor(name,age,grades){
-        self.name=name;
-        self.age=age;
-        self.grades=grades;
+class Student {
+    constructor(name, age, grades) {
+      this.name = name;
+      this.age = age;
+      this.grades = grades;
     }
-    calculateAverage(){
-        
+  
+    calculateAverageGrade() {
+      if (!this.grades.length) {
+        return 0;
+      }
+      const sum = this.grades.reduce((total, grade) => total + grade, 0);
+      return sum / this.grades.length;
     }
+  
+    displayInfo() {
+      console.log("Student Information:");
+      console.log(`Name: ${this.name}`);
+      console.log(`Age: ${this.age}`);
+      console.log(`Grades: ${this.grades}`);
+    }
+  
+    hasPassed() {
+      const averageGrade = this.calculateAverageGrade();
+      return averageGrade >= 60;
+    }
+  }
+  
 
-}
-
+  const student1 = new Student("John", 18, [75, 80, 90, 65, 70]);
+  const student2 = new Student("Jane", 17, [80, 85, 95, 55, 60]);
+  const student3 = new Student("Mark", 19, [70, 75, 80, 85, 90]);
+  
   
